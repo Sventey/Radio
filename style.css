@@ -1,34 +1,87 @@
 /* Imports  */
 @import url('https://fonts.googleapis.com/css2?family=Chango&family=Cherry+Bomb+One&display=swap');
+@property --g2-1-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 87.97%;
+}
 
-/* Base styles */
-html{
-    background: linear-gradient(to right, #1aa4b8, #0a217b);
-    background-size: 200% 200%;
-    animation: gradient-animation 5s ease infinite;
+@property --g2-1-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 91.13%;
+}
 
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
+@property --g2-2-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 13.40%;
+}
+
+@property --g2-2-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 82.73%;
+}
+
+:root {
+    --g2-1-x-position: 87.97%;
+    --g2-1-y-position: 91.13%;
+    --g2-2-x-position: 13.40%;
+    --g2-2-y-position: 82.73%;
+}
+
+@keyframes g-2 {
     50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+        --g2-1-x-position: 15%;
+        --g2-1-y-position: 15%;
+        --g2-2-x-position: 61.21%;
+        --g2-2-y-position: 13.75%;
     }
 }
+
+/* Hide the default progress bar and playtime */
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time,
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+
+/* Ensure the volume control is always visible */
+audio::-webkit-media-controls-volume-slider {
+    display: block;
+    width: 100px; /* Adjust width as needed */
+}
+
+/* Optional: Style the audio element container */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Base styles */
+html {
+    overflow: hidden;
     height: 100%;
-    width: 100%;
 }
 
 body {
+    background: radial-gradient(100% 100% at 4% 3%, #5fcacc 0%, transparent),
+    radial-gradient(100% 100% at var(--g2-1-x-position) var(--g2-1-y-position), #1d1ba7 -32%, transparent),
+    radial-gradient(100% 100% at var(--g2-2-x-position) var(--g2-2-y-position), #235fd7 0%, transparent),
+    #5fcacc;
+    animation-name: g-2;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #ffffffd7;
     height: 100%;
     width: 100%;
+    overflow: auto;
 }
 
 /* Layout container */
@@ -47,11 +100,28 @@ h1 {
     margin: 0;
     text-align: left;
     font-family: "chango", sans-serif;
-    font-size: 4rem;
+    font-size: 5rem;
     text-transform: uppercase;
     font-style: normal;
     color: #fff;
     opacity: 0.7;
+}
+
+h2 {
+    margin: 0;
+    text-align: left;
+    font-family: "chango", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.live-song {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
 }
 
 #title {
@@ -77,6 +147,45 @@ section {
     margin: auto;
 }
 
+.radio-player {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+audio#html5player {
+    width: 200px;
+}
+
+.live {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.cover{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    height: 150pt;
+    width: 150pt;
+    border-radius: 25px;
+    background: url('https://cdn-images.dzcdn.net/images/cover/66997a3babcd76fced42425e063a0b55/1900x1900-000000-80-0-0.jpg');
+    background-size: cover;
+}
+
+.played-cover{
+    display: flex;
+    float: left;
+    margin-right: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    height: 50pt;
+    width: 50pt;
+    border-radius: 5px;
+    background: url('https://cdn-images.dzcdn.net/images/cover/66997a3babcd76fced42425e063a0b55/1900x1900-000000-80-0-0.jpg');
+    background-size: cover;
+}
+
 .station{
     display: flex;
     justify-content: center;
@@ -90,6 +199,11 @@ section {
     width: 75px;
     height: 75px;
     border-radius: 20px;
+}
+.station-info:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+    box-shadow: inset 0 0 0 2px #79f099;
 }
 
 /* Footer */

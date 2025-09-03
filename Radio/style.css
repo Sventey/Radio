@@ -1,0 +1,101 @@
+/* Imports  */
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Cherry+Bomb+One&display=swap');
+
+/* Base styles */
+html{
+    background: linear-gradient(to right, #1aa4b8, #0a217b);
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffffd7;
+    height: 100%;
+    width: 100%;
+}
+
+/* Layout container */
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0;
+    text-align: left;
+    font-family: "chango", sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #fff;
+    opacity: 0.7;
+}
+
+#title {
+    top: -10pt;
+    position: relative;
+    text-align: left;
+    font-family: "Cherry Bomb One", sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #fff;
+    opacity: 0.5;
+    margin-top: -1rem;
+}
+
+/* Main content */
+main {
+    padding: 1rem;
+}
+
+section {
+    max-width: 450px;
+    margin: auto;
+}
+
+.station{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.station-info {
+    background-size: cover;
+    padding: 0.2rem;
+    margin: 1rem;
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+}
+
+/* Footer */
+footer {
+    align-self: end;
+    color: #ffffffac;
+    text-align: center;
+    padding: 1rem;
+}
