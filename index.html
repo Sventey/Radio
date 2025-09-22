@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Work radio">
-    <title>Radio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Work radio">
+        <title>Radio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="scripts.js" defer></script>
+    </head>
 <body>
     <header>
         <h1>Radio</h1>
@@ -20,12 +21,14 @@
                 <div class="live">
                     <div class="cover">
                     </div>
-                    <p class="live-song">Like a Stone</p>
-                    <p class="live-artist">Audioslave</p>
+                    <p class="live-song">Loading...</p>
+                    <p class="live-artist">Loading...</p>
                 </div>
                 <div class="controls">
                     <audio id="html5player" controls="controls" autoplay="autoplay" allow="autoplay">
-                        <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/KINK.mp3">
+                        <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/KINKAAC.aac" type="audio/aac">
+                        <!-- Fallback for older browsers -->
+                        <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/KINK.mp3" type="audio/mpeg">
                     </audio>
                 </div>
                 <div class="history">
@@ -72,6 +75,4 @@
         <p>&copy; 2025 Svens Radio. All rights reserved.</p>
     </footer>
 </body>
-
-<script src="script.js" defer></script>
 </html>
