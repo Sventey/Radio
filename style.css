@@ -1,44 +1,6 @@
 /* Imports  */
-@import url('https://fonts.googleapis.com/css2?family=Chango&family=Cherry+Bomb+One&display=swap');
-@property --g2-1-x-position {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 87.97%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chango&family=Cherry+Bomb+One&display=swap');
 
-@property --g2-1-y-position {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 91.13%;
-}
-
-@property --g2-2-x-position {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 13.40%;
-}
-
-@property --g2-2-y-position {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 82.73%;
-}
-
-:root {
-    --g2-1-x-position: 87.97%;
-    --g2-1-y-position: 91.13%;
-    --g2-2-x-position: 13.40%;
-    --g2-2-y-position: 82.73%;
-}
-
-@keyframes g-2 {
-    50% {
-        --g2-1-x-position: 15%;
-        --g2-1-y-position: 15%;
-        --g2-2-x-position: 61.21%;
-        --g2-2-y-position: 13.75%;
-    }
-}
 
 /* Hide the default progress bar and playtime */
 audio::-webkit-media-controls-timeline,
@@ -56,7 +18,6 @@ audio::-webkit-media-controls-volume-slider {
 /* Optional: Style the audio element container */
 .controls {
     display: flex;
-    align-items: center;
     gap: 1rem;
 }
 
@@ -67,14 +28,7 @@ html {
 }
 
 body {
-    background: radial-gradient(100% 100% at 4% 3%, #5fcacc 0%, transparent),
-    radial-gradient(100% 100% at var(--g2-1-x-position) var(--g2-1-y-position), #1d1ba7 -32%, transparent),
-    radial-gradient(100% 100% at var(--g2-2-x-position) var(--g2-2-y-position), #235fd7 0%, transparent),
-    #5fcacc;
-    animation-name: g-2;
-    animation-iteration-count: infinite;
-    animation-duration: 10s;
-    animation-timing-function: ease-in-out;
+background-color: black;
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -99,7 +53,7 @@ header {
 h1 {
     margin: 0;
     text-align: left;
-    font-family: "chango", sans-serif;
+    font-family: "Archivo Black", sans-serif;
     font-size: 5rem;
     text-transform: uppercase;
     font-style: normal;
@@ -110,8 +64,8 @@ h1 {
 h2 {
     margin: 0;
     text-align: left;
-    font-family: "chango", sans-serif;
-    font-size: 1rem;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 2rem;
     text-transform: uppercase;
     font-style: normal;
     color: #fff;
@@ -119,16 +73,23 @@ h2 {
 }
 
 .live-song {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-family: "Archivo Black", sans-serif;
     font-weight: bold;
     margin: 0;
+    max-width: 200px;
+}
+.live-artist {
+    font-size: 0.8rem;
+    margin-top: -10px;
+    color: #838383;
 }
 
 #title {
     top: -10pt;
     position: relative;
     text-align: left;
-    font-family: "Cherry Bomb One", sans-serif;
+    font-family: "Archivo Black", sans-serif;
     font-size: 1.5rem;
     text-transform: uppercase;
     font-style: normal;
